@@ -21,13 +21,31 @@
     flex-wrap: wrap;
     margin-inline-start: clamp(2rem, 7.5vw, 8rem);
     margin-top: 4rem;
-    gap: 5rem;
   }
   .settings {
     height: 300px;
     display: flex;
     flex-direction: column;
     gap: 2.2rem;
+  }
+  .settings > div {
+    display: flex;
+    width: 500px;
+    justify-content: space-between;
+    margin-inline-end: 1rem;
+  }
+  .settings > div > div {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .settings > div > div span {
+    flex: 1;
+  }
+  #image-border-color {
+    width: 131px;
+    height: 16px;
   }
 </style>
 
@@ -38,36 +56,48 @@
       <div class="settings">
         <div>
           <label for="image-width">image width (100 - 450)</label>
-          <input v-model="width" min="100" max="450" type="range" name="image-width" id="image-width">
-          <span>({{ width }}px)</span>
+          <div>
+            <input v-model="width" min="100" max="450" type="range" name="image-width" id="image-width">
+            <span>({{ width }}px)</span>
+          </div>
         </div>
         <div>
           <label for="image-blur">image blur (0 - 12)</label>
-          <input v-model="imageBlur" min="0" max="12" type="range" name="image-blur" id="image-blur">
-          <span>({{ imageBlur }}px)</span>
+          <div>
+            <input v-model="imageBlur" min="0" max="12" type="range" name="image-blur" id="image-blur">
+            <span>({{ imageBlur }}px)</span>
+          </div>
         </div>
         <div>
           <label for="image-opacity">image opacity (0 - 100)</label>
-          <input v-model="imageOpacity" min="0" max="100" type="range" name="image-opacity" id="image-opacity">
-          <span>({{ imageOpacity }}%)</span>
+          <div>
+            <input v-model="imageOpacity" min="0" max="100" type="range" name="image-opacity" id="image-opacity">
+            <span>({{ imageOpacity }}%)</span>
+          </div>
         </div>
         <div>
           <label for="image-border-width">image border width (0 - 10)</label>
-          <input v-model="imageBorderWidth" min="0" max="10" type="range" name="image-border-width"
-            id="image-border-width">
-          <span>({{ imageBorderWidth }}px)</span>
+          <div>
+            <input v-model="imageBorderWidth" min="0" max="10" type="range" name="image-border-width"
+              id="image-border-width">
+            <span>({{ imageBorderWidth }}px)</span>
+          </div>
         </div>
         <div>
           <label for="image-border-radius">image border radius (0 - 20)</label>
-          <input v-model="imageBorderRadius" min="0" max="20" type="range" name="image-border-radius"
-            id="image-border-radius">
-          <span>({{ imageBorderRadius }}px)</span>
+          <div>
+            <input v-model="imageBorderRadius" min="0" max="20" type="range" name="image-border-radius"
+              id="image-border-radius">
+            <span>({{ imageBorderRadius }}px)</span>
+          </div>
         </div>
         <div>
           <label for="image-border-color">image border color (0 - 20)</label>
-          <input v-model="imageBorderColor" type="color" name="image-border-color"
-            id="image-border-color">
-          <span>({{ imageBorderColor }})</span>
+          <div>
+            <input v-model="imageBorderColor" type="color" name="image-border-color"
+              id="image-border-color">
+            <span>({{ imageBorderColor }})</span>
+          </div>
         </div>
 
       </div>
